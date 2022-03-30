@@ -4,11 +4,11 @@
 
 ## :page_with_curl: About
 
-HTML, CSS, and JavaScript group project developed by [Laís Namatela](https://www.linkedin.com/in/la%C3%ADs-nametala/), [Raphael Martins](https://www.linkedin.com/in/raphaelameidamartins/), [Rafael Oliveira Elias](https://www.linkedin.com/in/rafael-oliveira-elias-865bb3154/) and [Wendryo Sales](https://www.linkedin.com/in/wendryosales/) at the end of [Principles of Web Development Module](https://github.com/raphaelalmeidamartins/trybe_exercicios/tree/main/1_fundamentos-do-desv-web) of Trybe's Web Development course.
+HTML, CSS, and JavaScript group project developed by [Laís Namatela](https://www.linkedin.com/in/la%C3%ADs-nametala/), [Raphael Martins](https://www.linkedin.com/in/raphaelameidamartins/), [Rafael Oliveira Elias](https://www.linkedin.com/in/rafael-oliveira-elias-865bb3154/) and [Wendryo Sales](https://www.linkedin.com/in/wendryosales/) at the end of Principles of Web Development Module of Trybe's Web Development course.
 
 We developed a random recipe suggestions web app fetching for recipes data from the Edman's API. We also implemented a chat-bot to set user preferences.
 
-[Click here](https://raphaelalmeidamartins.github.io/what-to-cook-web-app) to check out the final version of the project on your browser.
+[Click here](https://lalanametala.github.io/what-to-cook-web-app/) to check out the final version of the project on your browser.
 
 ## :memo: Methodologies
 
