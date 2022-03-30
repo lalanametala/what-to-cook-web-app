@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="libs/fontawesome-free-6.0.0-web/css/all.css">
+    <link rel="stylesheet" href="libs/bulma/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>What to cook </title>
+    <script src="./src/fetchRecipes.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <header id="header" class="header-container">
+            <h1>What to Cook</h1>
+        </header>
+
+        <!-- Tabs' sections start -->
+        <section id="main-container">
+            <div class="inside-container">
+                <section id="recipe-container" class="visible">
+                    <div class="image-panel">
+                        <figure class="image is-square">
+                            <img id="recipe-img" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif">
+                        </figure>
+                        <h2 id="recipe-title">Loading</h2>
+                        <section id="tags">
+                            <span class="tag"></span>
+                        </section>
+                    </div>
+                    <div class="ingredients-table-panel">
+                        <section class="ingredients-container">
+                            <ul id="recipe-ingredients" class="recipe-ingredients">
+                                <h3>Ingredients: <span id="recipe-ingredients-number"></span></h3>
+                                <p>Preparation time: <span id="prepar-time"></span>min</p>
+                                <p>Servings: <span id="servings-number"></span></p>
+                                <li class="ingredient"></li>
+                            </ul>
+                            <div class="instructions">
+                                <h3>Preparation</h3>
+                                <span>
+                                    <button id="recipe-btn-instructions" class="button is-light">
+                                        <a id="linkFood" href="#" target="_blank">Instructions</a>
+                                    </button></a>
+                                    <a href="#" id="foodSource" target="_blank"></a>
+                                </span>
+                            </div>
+                        </section>
+
+                        <!-- nutrition table start -->
+                        <table class="table is-hoverable">
+                            <thead>
+                                <th>Quantity per serving</th>
+                                <th></th>
+                                <th>%</th>
+                            </thead>
+                            <tr>
+                                <th>Energetic value</th>
+                                <td><span id="food-calories-data"></span>kcal</td>
+                                <td><span id="food-calories-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Carbs</th>
+                                <td><span id="food-carbs-data"></span>g</td>
+                                <td><span id="food-carbs-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Proteins</th>
+                                <td><span id="food-proteins-data"></span>g</td>
+                                <td><span id="food-proteins-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Saturated fat</th>
+                                <td><span id="food-saturatedfat-data"></span>g</td>
+                                <td><span id="food-saturatedfat-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Trans fat</th>
+                                <td><span id="food-transfat-data"></span>g</td>
+                                <td><span id="food-transfat-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Total fat</th>
+                                <td><span id="food-totalfat-data"></span>g</td>
+                                <td><span id="food-totalfat-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Fiber</th>
+                                <td><span id="food-totalfiber-data"></span>g</td>
+                                <td><span id="food-totalfiber-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Sodium</th>
+                                <td><span id="food-sodium-data"></span>mg</td>
+                                <td><span id="food-sodium-percent"></span>%</td>
+                            </tr>
+                        </table>
+                        <!-- nutrition table end -->
+
+                    </div>
+                </section>
+                <section id="drink-container" class="invisible">
+                    <div class="image-panel">
+                        <figure class="image is-square">
+                            <img id="drink-recipe-img" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif">
+                        </figure>
+                        <h2 id="drink-recipe-title"></h2>
+                        <section id="tagsdrink">
+                            <span class="tag"></span>
+                        </section>
+                    </div>
+                    <div class="ingredients-table-panel">
+                        <section class="ingredients-container">
+                            <ul id="drink-recipe-ingredients" class="recipe-ingredients">
+                                <h3>Ingredients: <span id="drink-recipe-ingredients-number"></span></h3>
+                                <p>Preparation time: <span id="drink-prepar-time"></span>min</p>
+                                <p>Servings: <span id="drink-servings-number"></span></p>
+                                <li class="ingredient"></li>
+                            </ul>
+                            <div class="instructions">
+                                <h3>Preparation</h3>
+                                <span>
+                                    <button id="recipe-btn-instructions" class="button is-light">
+                                        <a id="linkDrink" href="#" target="_blank">Instructions</a>
+                                    </button></a>
+                                    <a href="#" id="drinkSource" target="_blank"></a>
+                                </span>
+                            </div>
+                        </section>
+
+                        <!-- nutrition table start -->
+                        <table class="table is-hoverable">
+                            <thead>
+                                <th>Quantity per serving</th>
+                                <th></th>
+                                <th>%</th>
+                            </thead>
+                            <tr>
+                                <th>Energetic value</th>
+                                <td><span id="drink-calories-data"></span>kcal</td>
+                                <td><span id="drink-calories-percent" ></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Carbs</th>
+                                <td><span id="drink-carbs-data"></span>g</td>
+                                <td><span id="drink-carbs-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Proteins</th>
+                                <td><span id="drink-proteins-data"></span>g</td>
+                                <td><span id="drink-proteins-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Saturated fat</th>
+                                <td><span id="drink-saturatedfat-data"></span>g</td>
+                                <td><span id="drink-saturatedfat-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Trans fat</th>
+                                <td><span id="drink-transfat-data"></span>g</td>
+                                <td><span id="drink-transfat-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Total fat</th>
+                                <td><span id="drink-totalfat-data"></span>g</td>
+                                <td><span id="drink-totalfat-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Fiber</th>
+                                <td><span id="drink-totalfiber-data"></span>g</td>
+                                <td><span id="drink-totalfiber-percent"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th>Sodium</th>
+                                <td><span id="drink-sodium-data"></span>mg</td>
+                                <td><span id="drink-sodium-percent"></span>%</td>
+                            </tr>
+                        </table>
+                        <!-- nutrition table end -->
+
+                    </div>
+                </section>
+                
+                <!-- modal start -->
+                <div class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-content">
+                        <section id="settings-modal">
+                            <p>Do you want to reset your preferences?</p>
+                            <button id="btn-reset-settings" class="button is-danger">Reset settings</button>
+                        </section>
+                    </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
+                </div>
+                <!-- modal end -->
+
+            </div>
+        </section>
+        <!-- Tabs' section end -->
+
+        <nav id="navbar" class="nav">
+            <div>
+                <span class="icon selected" id="food-icon" title="Food recipe">
+                    <i class="fa-solid fa-utensils"></i>
+                </span>
+                <span class="icon" id="drink-icon" title="Drink recipe">
+                    <i class="fa-solid fa-martini-glass-citrus"></i>
+                </span>
+                <span class="icon" id="refresh-icon" title="Generate recipes again">
+                    <i class="fa-solid fa-rotate"></i>
+                </span>
+                <span class="icon" id="setttings-icon" title="Reset preferences">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+            </div>
+        </nav>
+    </main>
+
+    <!-- logo attribution screen start -->
+    <section id="loading">
+        <div>
+            <figure class="image is-square">
+                <img src="imgs/logo.svg">
+            </figure>
+            <figure class="image">
+                <img src="imgs/Edamam_Badge.svg">
+            </figure>
+        </div>
+    </section>
+    <!-- logo attribution screen end -->
+
+    <section id="forms">
+        <div class="forms-inside-container">
+
+            <!-- speech-bubbles' start -->
+            <section id="preferences-form" action="">
+                <div id="question-1" class="questions">
+                    <p class="speech-bubble hidden">Hello, I am Fulana, and I will ask some questions about your food preferences before we get started</p>
+                    <p class="speech-bubble hidden">What's your name?</p>
+                    <div class="input-group hidden">
+                        <input class="input" type="text" name="username" placeholder="Enter your name" id="username">
+                        <div class="form-button-container">
+                            <button class="button is-outlined is-danger btn-start-over">Start over</button>
+                            <button id="btn-username" class="button next is-success">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="question-2" class="questions">
+                    <p class="speech-bubble hidden">Do you have any food restrictions?</p>
+                    <div class="input-group hidden">
+                        <label class="label" for="restricted-1"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-1" value="vegan">vegan</label>
+                        <label class="label" for="restricted-2"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-2" value="vegetarian">vegetarian</label>
+                        <label class="label" for="restricted-3"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-3" value="dairy-free">dairy-free</label>
+                        <label class="label" for="restricted-4"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-4" value="alcohol-free">alcohol-free</label>
+                        <label class="label" for="restricted-5"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-5" value="gluten-free">gluten-free</label>
+                        <label class="label" for="restricted-6"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-6" value="keto-friendly">keto-friendly</label>
+                        <label class="label" for="restricted-7"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-7" value="low-sugar">low-sugar</label>
+                        <label class="label" for="restricted-8"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-8" value="no-oil-added">no-oil-added</label>
+                        <label class="label" for="restricted-9"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-9" value="peanut-free">peanut-free</label>
+                        <label class="label" for="restricted-10"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-10" value="pork-free">pork-free</label>
+                        <label class="label" for="restricted-11"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-11" value="red-meat-free">red-meat-free</label>
+                        <label class="label" for="restricted-12"><input class="checkbox" type="checkbox" name="restricted-foods" id="restricted-12" value="tree-nut-free">tree-nut-free</label>
+                        <div class="form-button-container">
+                            <button class="button is-outlined is-danger btn-start-over">Start over</button>
+                            <button id="btn-restriction" class="button next is-success">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="question-3" class="questions">
+                    <p class="speech-bubble hidden">What ingredients do you want to use<span id="username-span"></span>?</p>
+                    <p class="speech-bubble hidden">If you don't enter any ingredient, we will randomly generate the recipes for you</strong></p>
+                    <div class="input-group hidden">
+                        <input class="input" type="text" name="ingredients" placeholder="Enter the ingredients" id="ingredients">
+                        <div class="form-button-container">
+                            <button class="button is-outlined is-danger btn-start-over">Start over</button>
+                            <button id="btn-ingredients" class="button next is-success">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="question-4" class="questions">
+                    <p class="speech-bubble hidden">Thank you for your answers! You can reset or edit your preferences any time you want in the settings screen</p>
+                    <p class="speech-bubble hidden">This application does not use cookies, all your data is saved in your web browser local storage</p>
+                    <p class="speech-bubble hidden">May I proceed with these preferences?</p>
+                    <div class="input-group hidden">
+                        <div class="form-button-container submit-container">
+                            <button class="button is-outlined is-danger btn-start-over">Start over</button>
+                            <button id="submit-button" class="button is-success">Ok</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="question-5" class="questions">
+                    <p class="speech-bubble hidden">Generating random recipe suggestions...</p>
+                </div>
+            </section>
+            <!-- speech-bubbles' end -->
+
+        </div>
+    </section>
+</body>
+</html>
